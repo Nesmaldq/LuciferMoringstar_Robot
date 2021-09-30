@@ -33,7 +33,7 @@ async def filter(client, message):
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
-                            InlineKeyboardButton("📢 Join Updates Channel 📢", url=invite_link.invite_link)
+                            InlineKeyboardButton("📢 Join Updates Channel 📢", url="https://t.me/TELE_MOVIES2021") 
                         ]
                     ]
                 ),
@@ -53,7 +53,7 @@ async def filter(client, message):
     if 2 < len(message.text) < 100:    
         btn = []
         search = message.text
-        mo_tech_yt = f"**🗂️ Title:** {search}\n**⭐ Rating:** {random.choice(RATING)}\n**🎭 Genre:** {random.choice(GENRES)}\n**📤 Uploaded by {message.chat.title}**"
+        TELE_MOVIES2021= f"**🗂️ Title:** {search}\n**⭐ Rating:** {random.choice(RATING)}\n**🎭 Genre:** {random.choice(GENRES)}\n**© τєℓє мονιєѕ τм**"
         files = await get_filter_results(query=search)
         if files:
             for file in files:
@@ -85,10 +85,10 @@ async def filter(client, message):
             if API_KEY:
                 poster=await get_poster(search)
             if poster:
-                await message.reply_photo(photo=poster, caption=mo_tech_yt, reply_markup=InlineKeyboardMarkup(buttons))
+                await message.reply_photo(photo=poster, caption=TELE_MOVIES2021, reply_markup=InlineKeyboardMarkup(buttons))
 
             else:
-                await message.reply_text(mo_tech_yt, reply_markup=InlineKeyboardMarkup(buttons))
+                await message.reply_text(TELE_MOVIES2021, reply_markup=InlineKeyboardMarkup(buttons))
             return
 
         data = BUTTONS[keyword]
@@ -104,9 +104,9 @@ async def filter(client, message):
         if API_KEY:
             poster=await get_poster(search)
         if poster:
-            await message.reply_photo(photo=poster, caption=mo_tech_yt, reply_markup=InlineKeyboardMarkup(buttons))
+            await message.reply_photo(photo=poster, caption=TELE_MOVIES2021, reply_markup=InlineKeyboardMarkup(buttons))
         else:
-            await message.reply_text(mo_tech_yt, reply_markup=InlineKeyboardMarkup(buttons))
+            await message.reply_text(TELE_MOVIES2021, reply_markup=InlineKeyboardMarkup(buttons))
 
 @Client.on_message(filters.text & filters.group & filters.incoming & filters.chat(AUTH_GROUPS) if AUTH_GROUPS else filters.text & filters.group & filters.incoming)
 async def group(client, message):
@@ -115,7 +115,7 @@ async def group(client, message):
     if 2 < len(message.text) < 50:    
         btn = []
         search = message.text
-        mo_tech_yt = f"**🗂️ Title:** {search}\n**⭐ Rating:** {random.choice(RATING)}\n**🎭 Genre:** {random.choice(GENRES)}\n**📤 Uploaded by {message.chat.title}**"
+        TELE_MOVIES2021 = f"**🗂️ Title:** {search}\n**⭐ Rating:** {random.choice(RATING)}\n**🎭 Genre:** {random.choice(GENRES)}\n**© τєℓє мονιєѕ τм**"
         nyva=BOT.get("username")
         if not nyva:
             botusername=await client.get_me()
@@ -150,9 +150,9 @@ async def group(client, message):
             if API_KEY:
                 poster=await get_poster(search)
             if poster:
-                await message.reply_photo(photo=poster, caption=mo_tech_yt, reply_markup=InlineKeyboardMarkup(buttons))
+                await message.reply_photo(photo=poster, caption=TELE_MOVIES2021, reply_markup=InlineKeyboardMarkup(buttons))
             else:
-                await message.reply_text(mo_tech_yt, reply_markup=InlineKeyboardMarkup(buttons))
+                await message.reply_text(TELE_MOVIES2021, reply_markup=InlineKeyboardMarkup(buttons))
             return
 
         data = BUTTONS[keyword]
@@ -168,9 +168,9 @@ async def group(client, message):
         if API_KEY:
             poster=await get_poster(search)
         if poster:
-            await message.reply_photo(photo=poster, caption=mo_tech_yt, reply_markup=InlineKeyboardMarkup(buttons))
+            await message.reply_photo(photo=poster, caption=TELE_MOVIES2021, reply_markup=InlineKeyboardMarkup(buttons))
         else:
-            await message.reply_text(mo_tech_yt, reply_markup=InlineKeyboardMarkup(buttons))
+            await message.reply_text(TELE_MOVIES2021, reply_markup=InlineKeyboardMarkup(buttons))
 
     
 def get_size(size):
@@ -277,7 +277,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         elif query.data == "help":
             buttons = [
                 [
-                    InlineKeyboardButton('Update Channel', url='t.me/Mo_Tech_YT'),
+                    InlineKeyboardButton('Update Channel', url='TELE_MOVIES2021'),
                     InlineKeyboardButton('Source Code', url=f'{TUTORIAL}')
                 ]
                 ]
@@ -286,7 +286,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         elif query.data == "about":
             buttons = [
                 [
-                    InlineKeyboardButton('Update Channel', url='t.me/Mo_Tech_YT'),
+                    InlineKeyboardButton('Update Channel', url='t.me/TELE_MOVIES2021'),
                     InlineKeyboardButton('Source Code', url=f'{TUTORIAL}')
                 ]
                 ]
