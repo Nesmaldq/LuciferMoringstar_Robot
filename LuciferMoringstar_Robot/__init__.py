@@ -33,7 +33,7 @@ Bot Owner Only
 ABOUT = """
 ➥ Name :  Auto Filter With IMDB
     
-➥ Creator : [Muhammed RK](t.me/Mrk_YT)
+➥ Creator : [BRUNO](t.me/BRUNOKLM)
 
 ➥ Language : Python3
 
